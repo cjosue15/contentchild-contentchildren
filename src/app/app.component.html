@@ -1,1 +1,65 @@
-<h1>@ContenChild, @ContentChildren y Proyeccion de contenido</h1>
+<app-accordion #accordion [type]="accordionType.EXPANSION">
+  <app-accordion-panel>
+    <app-accordion-panel-header>
+      <h1>Panel 1</h1>
+    </app-accordion-panel-header>
+    <app-accordion-panel-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+        perferendis nostrum nesciunt distinctio totam repudiandae cumque esse,
+        eligendi veritatis minus deleniti laudantium culpa rem adipisci amet
+        architecto fugiat, voluptas deserunt. Aliquam repellendus ullam delectus
+        numquam, reprehenderit voluptate nulla dignissimos fuga minus explicabo,
+        modi autem quis ex commodi quam dolorem sed ut omnis quidem libero
+        similique blanditiis dolores saepe obcaecati. Quas. Molestiae ipsam
+        obcaecati accusamus numquam labore assumenda aperiam. Reiciendis, cumque
+        assumenda minima, praesentium soluta accusantium sunt est laborum ex
+        provident unde alias quo? Omnis, a illum doloribus tempore eos tempora.
+      </p>
+    </app-accordion-panel-content>
+  </app-accordion-panel>
+  <app-accordion-panel>
+    <app-accordion-panel-header>
+      <h1>Panel 2</h1>
+    </app-accordion-panel-header>
+    <app-accordion-panel-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+        perferendis nostrum nesciunt distinctio totam repudiandae cumque esse,
+        eligendi veritatis minus deleniti laudantium culpa rem adipisci amet
+        architecto fugiat, voluptas deserunt. Aliquam repellendus ullam delectus
+        numquam, reprehenderit voluptate nulla dignissimos fuga minus explicabo,
+        modi autem quis ex commodi quam dolorem sed ut omnis quidem libero
+        similique blanditiis dolores saepe obcaecati. Quas. Molestiae ipsam
+        obcaecati accusamus numquam labore assumenda aperiam. Reiciendis, cumque
+        assumenda minima, praesentium soluta accusantium sunt est laborum ex
+        provident unde alias quo? Omnis, a illum doloribus tempore eos tempora.
+      </p>
+    </app-accordion-panel-content></app-accordion-panel
+  >
+  <app-accordion-panel>
+    <app-accordion-panel-header>
+      <h1>Panel 3</h1>
+    </app-accordion-panel-header>
+    <app-accordion-panel-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+        perferendis nostrum nesciunt distinctio totam repudiandae cumque esse,
+        eligendi veritatis minus deleniti laudantium culpa rem adipisci amet
+        architecto fugiat, voluptas deserunt. Aliquam repellendus ullam delectus
+        numquam, reprehenderit voluptate nulla dignissimos fuga minus explicabo,
+        modi autem quis ex commodi quam dolorem sed ut omnis quidem libero
+        similique blanditiis dolores saepe obcaecati. Quas. Molestiae ipsam
+        obcaecati accusamus numquam labore assumenda aperiam. Reiciendis, cumque
+        assumenda minima, praesentium soluta accusantium sunt est laborum ex
+        provident unde alias quo? Omnis, a illum doloribus tempore eos tempora.
+      </p>
+    </app-accordion-panel-content></app-accordion-panel
+  >
+</app-accordion>
+
+<div>
+  <button (click)="accordion.openAll()">Open ALl</button>
+
+  <button (click)="accordion.closeAll()">Close ALl</button>
+</div>
