@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { AccordionType } from './components/accordion/accordion.component';
 import {
-  AccordionComponent,
-  AccordionPanelComponent,
-  AccordionPanelHeaderComponent,
-  AccordionPanelContentComponent,
+  Accordion,
+  AccordionPanel,
+  AccordionPanelHeader,
+  AccordionPanelContent,
 } from './components';
 
 @Component({
   standalone: true,
   imports: [
-    AccordionComponent,
-    AccordionPanelComponent,
-    AccordionPanelHeaderComponent,
-    AccordionPanelContentComponent,
+    Accordion,
+    AccordionPanel,
+    AccordionPanelHeader,
+    AccordionPanelContent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'accordion';

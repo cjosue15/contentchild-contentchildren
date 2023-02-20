@@ -1,30 +1,35 @@
 import { NgIf } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  HostBinding,
-  Output,
-  Host,
-} from '@angular/core';
-import { AccordionComponent, AccordionType } from '../accordion.component';
+import { Component, HostBinding } from '@angular/core';
+import { Accordion, AccordionType } from '../accordion.component';
 
 let uniqueId: number = 0;
 
 @Component({
-  selector: 'app-accordion-panel',
+  selector: 'accordion-panel',
   standalone: true,
   imports: [NgIf],
-  templateUrl: './accordion-panel.component.html',
-  styleUrls: ['./accordion-panel.component.scss'],
+  template: `<div class="accordion-panel__header" (click)="togglePanel()">
+      <ng-content select="accordion-panel-header"></ng-content>
+    </div>
+    <div class="accordion-panel__content" *ngIf="isOpen">
+      <ng-content select="accordion-panel-content"></ng-content>
+    </div>`,
+  styles: [
+    `
+      :host {
+        display: block;
+      }
+    `,
+  ],
 })
-export class AccordionPanelComponent {
+export class AccordionPanel {
   @HostBinding('class.accordion-panel') hostClass = true;
 
   @HostBinding('id') id = 0;
 
   isOpen = false;
 
-  constructor(private accordion: AccordionComponent) {
+  constructor(private accordion: Accordion) {
     uniqueId++;
 
     this.id = uniqueId;

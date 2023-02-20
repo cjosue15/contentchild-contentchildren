@@ -1,6 +1,6 @@
 import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { Subject } from 'rxjs';
-import { AccordionPanelComponent } from './accordion-panel/accordion-panel.component';
+import { AccordionPanel } from './accordion-panel/accordion-panel.component';
 
 export enum AccordionType {
   DEFAULT = 'default',
@@ -8,15 +8,13 @@ export enum AccordionType {
 }
 
 @Component({
-  selector: 'app-accordion',
+  selector: 'accordion',
   standalone: true,
-  imports: [],
-  templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss'],
+  template: `<ng-content select="accordion-panel"></ng-content>`,
 })
-export class AccordionComponent {
-  @ContentChildren(AccordionPanelComponent)
-  panels!: QueryList<AccordionPanelComponent>;
+export class Accordion {
+  @ContentChildren(AccordionPanel)
+  panels!: QueryList<AccordionPanel>;
 
   @Input() type: AccordionType = AccordionType.DEFAULT;
 
