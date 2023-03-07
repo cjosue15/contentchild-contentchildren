@@ -1,9 +1,15 @@
-import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  ContentChildren,
+  Input,
+  QueryList,
+} from '@angular/core';
 import { Subject } from 'rxjs';
 import { AccordionPanel } from './accordion-panel/accordion-panel.component';
 
 export enum AccordionType {
-  DEFAULT = 'default',
+  ACCORDION = 'accordion',
   EXPANSION = 'expansion',
 }
 
@@ -13,10 +19,11 @@ export enum AccordionType {
   template: `<ng-content select="accordion-panel"></ng-content>`,
 })
 export class Accordion {
-  @ContentChildren(AccordionPanel)
-  panels!: QueryList<AccordionPanel>;
+  @ContentChild(AccordionPanel) panel!: AccordionPanel;
 
-  @Input() type: AccordionType = AccordionType.DEFAULT;
+  @ContentChildren(AccordionPanel) panels!: QueryList<AccordionPanel>;
+
+  @Input() type: AccordionType = AccordionType.EXPANSION;
 
   accordionChanges$ = new Subject<void>();
 

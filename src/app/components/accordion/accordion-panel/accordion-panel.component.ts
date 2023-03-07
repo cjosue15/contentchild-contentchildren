@@ -18,6 +18,7 @@ let uniqueId: number = 0;
     `
       :host {
         display: block;
+        border: 2px solid blue;
       }
     `,
   ],
@@ -36,7 +37,7 @@ export class AccordionPanel {
   }
 
   togglePanel(): void {
-    if (this.accordion.type === AccordionType.DEFAULT) {
+    if (this.accordion.type === AccordionType.ACCORDION) {
       this.accordion.accordionChanges$.next();
     }
     this.isOpen = !this.isOpen;
